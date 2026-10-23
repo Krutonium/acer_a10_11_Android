@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 1 = power menu on long press -->
+    <integer name="config_longPressOnPowerBehavior">1</integer>
+    <!-- Make the config value authoritative instead of the Assistant setting -->
+    <bool name="config_longPressOnPowerForAssistantSettingAvailable">false</bool>
+    <!-- Very long press: power menu too -->
+    <integer name="config_veryLongPressOnPowerBehavior">1</integer>
+</resources>

@@ -13,13 +13,17 @@ PRODUCT_DEVICE       := generic_arm64
 
 PRODUCT_BRAND        := Acer
 PRODUCT_MANUFACTURER := Acer
-PRODUCT_MODEL        := Iconia A10-11
+PRODUCT_MODEL        := Tattoo A10-11
 PRODUCT_MARKETNAME   := Acer A10-11
 
+# --- Make the system partition report the Acer identity ---------------------
+PRODUCT_SYSTEM_MODEL        := $(PRODUCT_MODEL)
+PRODUCT_SYSTEM_BRAND        := $(PRODUCT_BRAND)
+PRODUCT_SYSTEM_MANUFACTURER := $(PRODUCT_MANUFACTURER)
+
 # --- Make the model win over the Android 12 vendor's value -----------------
-# UNTESTED on this device: verify with `adb shell getprop ro.product.model`.
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.product.property_source_order=system,product,system_ext,odm,vendor
+    ro.product.property_source_order=product,system_ext,odm,vendor,system
 
 # --- Remove default apps ---------------------------------------------------
 # Browser2                -> org.chromium.webview_shell
@@ -32,5 +36,4 @@ PRODUCT_PACKAGES := $(filter-out \
 # --- Branding --------------------------------------------------------------
 # Defined in device/acer/a10_11/Android.bp. Must come after the filter-out.
 PRODUCT_PACKAGES += bootanimation-a10-11
-
-#PRODUCT_PACKAGES += A1011BrandingOverlay
+PRODUCT_PACKAGE_OVERLAYS += device/acer/a10_11/overlay
