@@ -1,0 +1,12 @@
+diff --git a/target/product/gsi/Android.bp b/target/product/gsi/Android.bp
+index 4fdb3ab866..1eb16fc472 100644
+--- a/target/product/gsi/Android.bp
++++ b/target/product/gsi/Android.bp
+@@ -180,6 +180,7 @@ android_system_image {
+         // init-second-stage to load debug policy from system_ext.
+         // This option is only meant to be set by compliance GSI targets.
+         "system_ext_userdebug_plat_sepolicy.cil",
++        "bootanimation-a10-11",
+     ] + select(soong_config_variable("gsi", "import_usb_debugging_test_app"), {
+         true: ["UsbDisableDebugger"],
+         default: [],

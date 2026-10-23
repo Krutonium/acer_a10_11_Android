@@ -1,0 +1,13 @@
+diff --git a/system/gd/hci/controller_impl.cc b/system/gd/hci/controller_impl.cc
+index e20029f62b..27ec91797b 100644
+--- a/system/gd/hci/controller_impl.cc
++++ b/system/gd/hci/controller_impl.cc
+@@ -236,7 +236,7 @@ struct ControllerImpl::impl {
+               handler_->BindOnceOn(this, &ControllerImpl::impl::le_set_host_feature_handler));
+     }
+ 
+-    if (is_supported(OpCode::READ_DEFAULT_ERRONEOUS_DATA_REPORTING)) {
++    if (false && is_supported(OpCode::READ_DEFAULT_ERRONEOUS_DATA_REPORTING)) {
+       hci_->EnqueueCommand(
+               ReadDefaultErroneousDataReportingBuilder::Create(),
+               handler_->BindOnceOn(

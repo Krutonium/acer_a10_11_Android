@@ -1,0 +1,6 @@
+prebuilt_media {
+    name: "bootanimation-a10-11",
+    src: "bootanimation.zip",
+    filename: "bootanimation.zip",
+    product_specific: true,
+}
